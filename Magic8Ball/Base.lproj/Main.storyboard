@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic8Ball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magic 8 Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLM-yb-ETE">
+                                <rect key="frame" x="20" y="64" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="4dh-oS-ubh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_8_ball" translatesAutoresizingMaskIntoConstraints="NO" id="xJd-JT-Cc9">
+                                <rect key="frame" x="20" y="96" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xJd-JT-Cc9" secondAttribute="height" multiplier="1:1" id="Dt5-gR-NDr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is where the answer shows up!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk9-19-7W1">
+                                <rect key="frame" x="20" y="517" width="374" height="93.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-l7-KUK">
+                                <rect key="frame" x="128.5" y="478" width="157" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="rNV-6B-5lf"/>
+                                    <constraint firstAttribute="height" constant="31" id="yMv-NL-ibO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Answer My Question" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="questionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7n-Gp-NER"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hk9-19-7W1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0r5-Kn-elh"/>
+                            <constraint firstItem="Ska-l7-KUK" firstAttribute="top" secondItem="xJd-JT-Cc9" secondAttribute="bottom" constant="8" id="Dc0-rh-vlW"/>
+                            <constraint firstItem="nLM-yb-ETE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I0v-wh-pwg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLM-yb-ETE" secondAttribute="trailing" constant="20" id="LfP-J2-EIw"/>
+                            <constraint firstItem="hk9-19-7W1" firstAttribute="trailing" secondItem="xJd-JT-Cc9" secondAttribute="trailing" id="PDT-Px-Ctc"/>
+                            <constraint firstItem="nLM-yb-ETE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QFD-3A-B7D"/>
+                            <constraint firstItem="nLM-yb-ETE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Rut-Xg-Zgx"/>
+                            <constraint firstItem="Ska-l7-KUK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a8q-3V-9xs"/>
+                            <constraint firstItem="xJd-JT-Cc9" firstAttribute="top" secondItem="nLM-yb-ETE" secondAttribute="bottom" constant="8" id="aui-4l-cgt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hk9-19-7W1" secondAttribute="trailing" constant="20" id="bYn-cf-IaR"/>
+                            <constraint firstItem="hk9-19-7W1" firstAttribute="leading" secondItem="xJd-JT-Cc9" secondAttribute="leading" id="r55-wM-zfl"/>
+                            <constraint firstItem="hk9-19-7W1" firstAttribute="top" secondItem="Ska-l7-KUK" secondAttribute="bottom" constant="16" id="xCN-ud-aaO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="hk9-19-7W1" id="U4n-Hf-XC8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image_8_ball" width="249" height="203"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
